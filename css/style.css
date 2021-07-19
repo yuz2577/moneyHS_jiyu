@@ -1022,6 +1022,9 @@ section {
 }
 
 @media all and (min-width: 780px) and (max-width: 1023px) {
+  body {
+    border: solid 2px green;
+  }
   #firstSection #firstLogo {
     width: 55vw;
     left: 30vw;
@@ -1094,6 +1097,9 @@ section {
 }
 
 @media all and (min-width: 640px) and (max-width: 779px) {
+  body {
+    border: solid 2px purple;
+  }
   #firstSection #firstLogo {
     width: 60vw;
     left: 30vw;
@@ -1168,19 +1174,32 @@ section {
   }
 }
 
-@media all and (max-width: 479px) {
+@media all and (max-width: 639px) {
+  body {
+    border: solid 2px pink;
+  }
+  #firstSection {
+    background-position-x: -140vw;
+  }
+  #firstSection #maskBox {
+    background-position-x: -140vw;
+  }
   #firstSection #firstLogo {
-    width: 55vw;
-    left: 30vw;
+    width: 90vw;
+    left: 50vw;
+    top: 40vw;
+  }
+  #firstSection #scrollBar {
+    left: 50vw;
   }
   #firstSection #NextfirstLogo {
-    width: 65%;
-    left: 33vw;
-    top: 20vh;
+    width: 80vw;
+    left: 42vw;
+    top: 19vh;
   }
   #firstSection ul {
-    left: 2.5vw;
-    top: 28vh;
+    left: 5vw;
+    top: 78vh;
   }
   #secondSection #epiMenu #episode #episodeBOX {
     font-size: 2.5vw;
@@ -1222,11 +1241,11 @@ section {
     width: 35vw;
   }
   #thirdSection #profileWrap .profileIMG:hover {
-    width: 43vw;
+    width: 46vw;
   }
   #thirdSection #profileWrap .profileIMG .profileText {
-    width: 35vw;
-    top: 5vh;
+    width: 38vw;
+    top: -0vh;
   }
   #thirdSection #profileWrap .profileIMG .profileText h3 {
     font-size: 2.5vw;
