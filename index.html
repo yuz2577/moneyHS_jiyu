@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleEN.css">
+</head>
+<style>
+    #lang li:nth-child(1) {
+    color:#BA2E2A;
+}
+</style>
+<body>
+    <div id="mouse">
+        <div id="mouseC"></div>
+    </div>
+    <img src="img/netflixLogo.png" alt="#" id="npLogo" class="fixed">
+    <div id="indi" class="fixed">
+        <ul id="indiclick">
+            <li class="indi"></li>
+            <li class="indi"></li>
+            <li class="indi"></li>
+            <li class="indi"></li>
+        </ul>
+    </div>
+    <div id="lang" class="fixed">
+        <ul>
+            <li><a href="index.html">EN</a></li>
+            <li>KR</li>
+            <li><a href="JPindex.html">JP</a></li>
+        </ul>
+    </div>  
+    <div id="menu" class="fixed">
+        <ul>
+            <li class="menus">SERIES</li>
+            <li class="menus">EPISODE</li>
+            <li class="menus">PROFILE</li>
+            <li class="menus">NEW SEASON</li>
+        </ul>
+    </div>
+    
+    <section id="firstSection">
+        <div id="maskBox">
+            <!-- <img src="img/종이의집 따로따로.png" alt="" id="mask"> -->
+        </div>
+        <div id="scrollBar">
+            <div id="scrollB"></div>
+            <div id="dragText">Drag a mask.</div>
+        </div>
+        <img src="img/firstLogo.png" alt="#" id="firstLogo">
+        <div class="wrapIn">
+        <img src="img/firstLogo2.png" alt="#" id="NextfirstLogo">
+        <img src="img/netflixOriginalSeries.png" id="netflixOriginal">
+        <ul id="roundBt">
+            <li>GO TO OFFICIAL PAGE</li>
+            <li>WATCH ON NETFLIX</li>
+        </ul>
+        </div>
+    </section>
+
+    <section id="secondSection">
+        <div class="wrapIn">
+        <div id="scrollToMove">
+            <div id="scrollToMoveCircle"></div>
+        </div>
+        <img src="img/secondPgLogo1.png" alt="#" id="secondLogo">
+        <span id="freevwIMG">
+            <img src="img/videoBT.jpg" id="videoBT">
+        </span> 
+        <!-- 배경 이미지 에피소드별로 바뀌게 한다. -->
+        <p id="freevwText">
+            teger iaculis dictum metus, at feugiat lorem aliquam non. Morbi vitae hendrerit metus, id aliquet odio. Quisque a ipsum ut lorem tristique aliquet. Phasellus varius fringilla felis, sed pharetra tellus tristique a. Quisque ornare ex sollicitudin mauris mattis ornare. Fusce in libero neque. Fusce dictum risus a diam elementum, vel interdum massa malesuada
+        </p>
+        <div id="epiMenu">
+            <ul id="season">
+                <p>SEASON</p>
+                <div id="seasonBOX">
+                    <div id="seasonSlide">
+                        <li class="season" data-key="season" data-value="1">1</li>
+                        <li class="season" data-key="season" data-value="2">2</li>
+                        <li class="season" data-key="season" data-value="3">3</li>
+                    </div>
+                </div>
+            </ul>
+            <ul id="episode">
+                <p>EPISODE</p>
+                <div id="episodeBOX">
+                    <div id="episodeSlide">
+                        <li class="epi on" data-key="s1" data-value="e01">01</li>
+                        <li class="epi" data-key="s1" data-value="e02">02</li>
+                        <li class="epi" data-key="s1" data-value="e03">03</li>
+                        <li class="epi" data-key="s1" data-value="e04">04</li>
+                        <li class="epi" data-key="s1" data-value="e05">05</li>
+                        <li class="epi" data-key="s1" data-value="e06">06</li>
+                        <li class="epi" data-key="s1" data-value="e07">07</li>
+                        <li class="epi" data-key="s1" data-value="e08">08</li>
+                        <li class="epi" data-key="s1" data-value="e09">09</li>
+                        <li class="epi" data-key="s1" data-value="e10">10</li>
+
+                        <!-- <li class="epi" data-key="s2" data-value="e01">01</li>
+                        <li class="epi" data-key="s2" data-value="e02">02</li>
+                        <li class="epi" data-key="s2" data-value="e03">03</li>
+                        <li class="epi" data-key="s2" data-value="e04">04</li>
+                        <li class="epi" data-key="s2" data-value="e05">05</li>
+                        <li class="epi" data-key="s2" data-value="e06">06</li>
+                        <li class="epi" data-key="s2" data-value="e07">07</li>
+                        <li class="epi" data-key="s2" data-value="e08">08</li>
+                        <li class="epi" data-key="s2" data-value="e09">09</li>
+                        <li class="epi" data-key="s2" data-value="e10">10</li> -->
+                    </div> 
+                </div>
+            </ul>
+        </div>
+        </div>
+
+    </section>
+
+    <section id="thirdSection">
+        <div class="wrapIn">
+        <div id="profileScroll">
+            <div id="profileScrollC"></div>
+            <span>Scroll to Slide</span>
+        </div>
+        <img src="img/titleFont.png" id="thirdLogo">
+        <div id="profileWrap_W">
+            <ul id="profileWrap">
+                <li class="profileIMG">
+                    <img src="img/교수.png" alt="">
+                    <div class="profileText">
+                        <h3>Professer</h3>
+                        <p>The Professor had been planning heists from a young age. At the age of 19, he stopped renewing his identity card, so that he would not be registered.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/도쿄.png" alt="">
+                    <div class="profileText">
+                        <h3>Tokyo</h3>
+                        <p>A the age of 14, Tokyo joined her 28 year old boyfriend into a world of crime. Together, they successfully pulled off 15 heists.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/리우.png" alt="">
+                    <div class="profileText">
+                        <h3>Rio</h3>
+                        <p>In 2010, he engaged in multiple cyber-attacks, which were all done discretely so the police couldn’t track him. He stole banking data and attacked North American servers. </p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/리스본.png" alt="">
+                    <div class="profileText">
+                        <h3>Lisbon</h3>
+                        <p>Raquel Murillo Fuentes was a Spanish Police Inspector based in Madrid. After the crumbling of her marital relationship with Alberto Vicuña, she filed a restraining order against him.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/덴버.png" alt="">
+                    <div class="profileText">
+                        <h3>Denver</h3>
+                        <p>Denver was raised by his father Moscow, who abandoned Denver's mother at a roundabout due her drug use. For many years, Moscow led Denver to believe that his mother abandoned him.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/나이로비.png" alt="">
+                    <div class="profileText">
+                        <h3>Nairobi</h3>
+                        <p>She was born as Ágata Jiménez. Due to her poor conditions, she learned to counterfeit money at 13. During her teenage years, she had a boyfriend, who she later became pregnant with.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/헬싱키.png" alt="">
+                    <div class="profileText">
+                        <h3>Helsinki</h3>
+                        <p>Helsinki was born in Serbia. He was a soldier in the Yugoslav Wars with his cousin Oslo. He has a family in Serbia, to whom he sends money when he can. During the war, he had a bullet taken out of him in a tractor garage.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/스톡홀름.png" alt="">
+                    <div class="profileText">
+                        <h3>Stockholm</h3>
+                        <p>Mónica is well-educated and learns quickly. She only took 6 weeks to prepare for the entrance exams to get a job at the Royal Mint of Spain. While working as a secretary there, she begins an affair with Arturo Román.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/팔레르모.png" alt="">
+                    <div class="profileText">
+                        <h3>Palermo</h3>
+                        <p>He is born in Buenos Aires, in Argentina and has known Berlin for at least 10 years. Prior to the second heist, he had lived in Palermo, Italy. He is a trained engineer.</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/보고타.png" alt="">
+                    <div class="profileText">
+                        <h3>Bogotá</h3>
+                        <p>Not much is known about Bogotá's early life. He has seven children around the world: Emilio (Venezuela), Julián (Mexico), Erik (Iceland), Hanna (Finland), Drazen (Montenegro), Yaris (Greece), and Ivanna (Ukraine).</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/마르세유.png" alt="">
+                    <div class="profileText">
+                        <h3>Marsella</h3>
+                        <p>Not much is known about Marseille's early life. It was mentioned that he was a hitman. The only family he spoke of was his late dog, Pamuk (named after a village located in Somogy County, Hungary; it means 'cotton' in Turkish).</p>
+                    </div>
+                </li>
+                <li class="profileIMG">
+                    <img src="img/소피아.png" alt="">
+                    <div class="profileText">
+                        <h3>Sofía</h3>
+                        <p>She is given Rio's tracking and surveillance chip, and sent throughout the tunnels underneath the Bank of Spain with it to trick Alicia Sierra and Luis Tamayo. She is captured once the police are able to locate her.</p>
+                    <div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </section>
+
+    <section id="fourthSection">
+        <img src="img/fourthPg.jpg" id="fourthPgBg">
+        <div class="wrapIn">
+        <img src="img/fourthPgLogo.png" id="fourthPgLogo">
+        <span>Trailer Video</span>
+        <ul>
+            <li class="tVD">
+                <img src="img/videoBT.jpg">
+            </li>
+            <li class="tVD">
+                <img src="img/videoBT.jpg">
+            </li>
+            <li class="tVD">
+                <img src="img/videoBT.jpg">
+            </li>
+            <li class="tVD">
+                <img src="img/videoBT.jpg">
+            </li>
+        </ul>
+        </div>
+    </section>
+
+
+
+</body>
+<script src="js/menu.js"></script>
+<script src="js/index.js"></script>
+
+</html>
