@@ -846,8 +846,91 @@ section {
     }
 }
 
-@media all and (max-width:639px) {
+@media all and (min-width:480px) and (max-width:639px) {
     body { border: solid 2px pink}
+    #firstSection {
+        background-position-x:-140vw;
+    }
+    #firstSection #maskBox {
+       background-position-x: -140vw;
+    }
+    #firstSection #firstLogo {
+        width:90vw;
+        left: 50vw;
+        top: 40vw;
+    }
+    #firstSection #scrollBar {
+        left: 50vw;
+    }
+    #firstSection #NextfirstLogo {
+        width: 80vw;
+        left: 42vw;
+        top: 19vh;
+    }
+    #firstSection ul {
+        left: 5vw;
+        top: 78vh;
+    }
+    #secondSection #epiMenu #episode #episodeBOX{
+        font-size: 2.5vw; 
+    }
+    #secondSection #epiMenu #episode li:hover {
+        font-size: 3vw;
+    }
+    #secondSection #secondLogo {
+        top: 25.5vh;
+        left: 5vw;
+        width: 55vw;
+    }
+    #secondSection #freevwIMG {
+        width:50vw; height: 30vh;
+        left: 5vw;
+        top: 40vh;
+    }
+    #secondSection #freevwText {
+        top: 62vh;
+        left: 14.5vw;
+        width: 45%;
+        font-size: 1.6vw;
+    }
+    #menu ul {
+        font-size: 1.5vw;
+    }
+    #lang {
+        font-size: 4vw;
+    }
+    #thirdSection #thirdLogo {
+        width: 70vw;
+    }
+    #thirdSection #profileWrap {
+        width: 1000vw;
+        top: 30vh;
+    }
+    #thirdSection #profileWrap .profileIMG {
+        width: 35vw;
+        &:hover {
+            width: 46vw;
+        }
+    }
+    #thirdSection #profileWrap .profileIMG .profileText {
+        width: 38vw;
+        top: -0vh;
+        h3 {
+            font-size: 2.5vw;
+        }
+        p {
+            font-size: 1.8vw;
+        }
+    }
+    #fourthSection #fourthPgLogo {
+        top: 40vh;
+    }
+    #fourthSection ul {
+        top: 58vh;
+    }
+}
+@media all and (max-width:479px) {
+    body { border: solid 2px yellow}
     #firstSection {
         background-position-x:-140vw;
     }
