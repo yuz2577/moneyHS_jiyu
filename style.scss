@@ -1,7 +1,7 @@
 * {margin: 0; padding:0; box-sizing: border-box;}
 li,ul {list-style: none; color:inherit};
-a:visited {color: inherit;}
-a{text-decoration: none;}
+a:visited {color: inherit; color: inherit}
+a{text-decoration: none; color: inherit}
 
 /***************************************************/
 @keyframes scrollBt{
@@ -616,7 +616,7 @@ section {
 .hidden {height:100%; min-height:100%; overflow:hidden !important; touch-action:none;}
 //반응형반응형반응형✨✨✨✨✨✨✨✨✨✨✨//
 @media all and (min-width:1280px) and (max-width:1599px) {
-    body { border: solid 5px blue};
+    // body { border: solid 5px blue};
     #firstSection #firstLogo {
         width: 50vw;
         left: 30vw;
@@ -650,7 +650,7 @@ section {
 }
 //////////////////////////////////////////////////
 @media all and (min-width:1024px) and (max-width:1279px) {
-    body {border: solid 2px red;}
+    // body {border: solid 2px red;}
     #firstSection #firstLogo {
         width: 50vw;
         left: 30vw;
@@ -696,9 +696,6 @@ section {
 
 
 @media all and (min-width:780px) and (max-width:1023px) {
-    body {
-        border : solid 2px green;
-    }
     #firstSection #firstLogo {
         width: 55vw;
         left: 30vw;
@@ -772,7 +769,7 @@ section {
 }
 
 @media all and (min-width:640px) and (max-width:779px) {
-    body {border: solid 2px purple}
+    // body {border: solid 2px purple}
     #firstSection #firstLogo {
         width: 60vw;
         left: 30vw;
@@ -847,7 +844,7 @@ section {
 }
 
 @media all and (min-width:480px) and (max-width:639px) {
-    body { border: solid 2px pink}
+    // body { border: solid 2px pink}
     #firstSection {
         background-position-x:-140vw;
     }
@@ -930,7 +927,7 @@ section {
     }
 }
 @media all and (max-width:479px) {
-    body { border: solid 2px yellow}
+    // body { border: solid 2px yellow}
     #firstSection {
         background-position-x:-140vw;
     }
