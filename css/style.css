@@ -13,12 +13,20 @@ li, ul {
 
 a:visited {
   color: inherit;
-  color: inherit;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+}
+
+::-moz-selection {
+  background: black;
+  color: white;
+}
+
+::selection {
+  background: black;
+  color: white;
 }
 
 /***************************************************/
@@ -75,15 +83,25 @@ a {
   }
 }
 
-@-webkit-keyframes noneD {
+@-webkit-keyframes rotatePro {
+  0% {
+    -webkit-transform: perspective(600px) rotateY(0deg);
+            transform: perspective(600px) rotateY(0deg);
+  }
   100% {
-    display: none;
+    -webkit-transform: perspective(600px) rotateY(360deg);
+            transform: perspective(600px) rotateY(360deg);
   }
 }
 
-@keyframes noneD {
+@keyframes rotatePro {
+  0% {
+    -webkit-transform: perspective(600px) rotateY(0deg);
+            transform: perspective(600px) rotateY(0deg);
+  }
   100% {
-    display: none;
+    -webkit-transform: perspective(600px) rotateY(360deg);
+            transform: perspective(600px) rotateY(360deg);
   }
 }
 
@@ -91,14 +109,6 @@ a {
 body {
   font-family: 'Arimo', sans-serif;
   cursor: none;
-}
-
-.wrapIn {
-  width: 90vw;
-  height: 100%;
-  position: absolute;
-  left: 10vw;
-  z-index: 0;
 }
 
 #mouse {
@@ -141,7 +151,7 @@ body {
 #indi {
   border-right: solid 1px #5e5e5e;
   left: -100%;
-  width: 10vw;
+  width: 10%;
   height: 100vh;
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
@@ -185,7 +195,7 @@ body {
 
 #lang {
   color: white;
-  font-size: 1.5vw;
+  font-size: 19pt;
   top: 75%;
   right: 0;
   margin-right: 10px;
@@ -243,7 +253,6 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   color: grey;
-  font-size: 1vw;
 }
 
 #menu ul li {
@@ -278,7 +287,6 @@ section {
   top: 0;
   -webkit-transition-duration: 2s;
           transition-duration: 2s;
-  z-index: 1;
 }
 
 #firstSection #maskBox.on {
@@ -295,10 +303,9 @@ section {
   position: absolute;
   border-radius: 30px;
   top: 70%;
-  left: 55vw;
+  left: 62%;
   -webkit-transition: .5s;
   transition: .5s;
-  z-index: 2;
 }
 
 #firstSection #scrollB {
@@ -318,26 +325,24 @@ section {
   position: absolute;
   top: 110%;
   width: 5vw;
-  font-size: 1vw;
 }
 
 #firstSection #firstLogo {
   position: absolute;
   top: 50%;
-  left: 33vw;
+  left: 32%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 45vw;
+  width: 40%;
   opacity: 1;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-  z-index: 100;
 }
 
 #firstSection #NextfirstLogo {
   position: absolute;
   top: 45%;
-  left: 25vw;
+  left: 32%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 40%;
@@ -360,8 +365,8 @@ section {
 #firstSection ul {
   position: absolute;
   color: white;
-  top: 58vh;
-  left: 6vw;
+  top: 58%;
+  left: 12%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -398,7 +403,6 @@ section {
           transition-delay: 1s;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-  font-size: 1vw;
 }
 
 #secondSection {
@@ -413,8 +417,8 @@ section {
 }
 
 #secondSection #scrollToMove {
-  width: 2vw;
-  height: 6vh;
+  width: 3vh;
+  height: 5vh;
   border: solid 2px #c7c7c7;
   position: absolute;
   display: -webkit-box;
@@ -423,7 +427,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  left: 87vw;
+  left: 96vw;
   border-radius: 30px;
   top: 30vh;
 }
@@ -441,24 +445,24 @@ section {
 }
 
 #secondSection #secondLogo {
-  width: 35vw;
+  width: 40%;
   position: absolute;
-  top: 20.5vh;
-  left: 11vw;
+  top: 20%;
+  left: 19%;
 }
 
 #secondSection #freevwIMG {
-  width: 30vw;
-  height: 45vh;
+  width: 37%;
+  height: 45%;
   position: absolute;
-  left: 34vw;
-  top: 33vh;
+  left: 45.5%;
+  top: 35%;
   background-image: url("../img/secondPgMovie1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 #secondSection #freevwIMG img {
@@ -482,10 +486,10 @@ section {
   color: white;
   width: 25%;
   height: 30%;
-  font-size: 1.2vw;
+  font-size: 20px;
   position: absolute;
   top: 50%;
-  left: 11vw;
+  left: 20%;
   text-align: right;
   word-break: break-all;
   display: -webkit-box;
@@ -531,14 +535,6 @@ section {
   padding: 10px 0;
 }
 
-#secondSection #epiMenu #season {
-  font-size: 1vw;
-}
-
-#secondSection #epiMenu #season p {
-  font-size: 1.5vw;
-}
-
 #secondSection #epiMenu #season #seasonBOX {
   width: 10vh;
   height: 10vh;
@@ -563,40 +559,38 @@ section {
   height: 10vh;
 }
 
-#secondSection #epiMenu #episode {
-  font-size: 1.2vw;
-}
-
-#secondSection #epiMenu #episode p {
-  font-size: 1.5vw;
-}
-
 #secondSection #epiMenu #episode #episodeBOX {
   height: 30vh;
   width: 10vw;
   position: relative;
+  overflow-y: scroll;
   scroll-behavior: smooth;
-  overflow: hidden;
+}
+
+#secondSection #epiMenu #episode #episodeBOX::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera*/
 }
 
 #secondSection #epiMenu #episode #episodeBOX #episodeSlide {
   position: absolute;
   width: 100%;
-  height: auto;
-  top: 0vh;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  height: 30vh;
+}
+
+#secondSection #epiMenu #episode p {
+  font-size: 19px;
 }
 
 #secondSection #epiMenu #episode li {
-  height: 10vh;
+  height: 5vh;
   -webkit-transition: .5s;
   transition: .5s;
   color: #b8b8b8;
 }
 
 #secondSection #epiMenu #episode li:hover {
-  font-size: 2vw;
+  font-size: 25px;
 }
 
 #secondSection #epiMenu #episode li.on {
@@ -616,7 +610,7 @@ section {
 }
 
 #thirdSection #profileScroll {
-  width: 3vw;
+  width: 3vh;
   height: 5vh;
   border: solid 2px white;
   position: absolute;
@@ -626,9 +620,9 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  left: 40vw;
+  left: 12vw;
   border-radius: 30px;
-  top: 40vh;
+  top: 93vh;
   opacity: 1;
 }
 
@@ -652,20 +646,19 @@ section {
   top: 25%;
 }
 
-#thirdSection #thirdLogo {
+#thirdSection > img {
   width: 50vw;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  left: 45vw;
-  top: 17vh;
+  left: 50vw;
+  top: 15vh;
 }
 
 #thirdSection #profileWrap_W {
   width: 90vw;
   height: 100%;
-  margin: 0;
-  top: 30vh;
+  margin: 0 10vw;
   overflow: hidden;
   position: relative;
 }
@@ -683,7 +676,7 @@ section {
   position: absolute;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  top: 40vh;
+  top: 65vh;
   left: 0vw;
   -webkit-transition: 1s;
   transition: 1s;
@@ -778,8 +771,8 @@ section {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  width: 14vw;
-  height: 35vh;
+  width: 15vw;
+  height: 40vh;
   background-image: url("../img/교수.png");
   margin: 0px;
   -webkit-filter: saturate(0);
@@ -792,11 +785,17 @@ section {
   -webkit-filter: none;
           filter: none;
   width: 20vw;
-  height: 50vh;
+  height: 55vh;
+  -webkit-animation: rotatePro .8s;
+          animation: rotatePro .8s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
 }
 
 #thirdSection #profileWrap .profileIMG:hover .profileText {
   opacity: 1;
+  -webkit-transition: ease-in 2s;
+  transition: ease-in 2s;
 }
 
 #thirdSection #profileWrap .profileIMG > img {
@@ -807,22 +806,14 @@ section {
   position: absolute;
   color: white;
   left: 102%;
-  width: 25vw;
-  height: 10vh;
+  width: 20vw;
+  height: 20vh;
   opacity: 0;
-  -webkit-transition-duration: .5s;
-          transition-duration: .5s;
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
 }
 
 #thirdSection #profileWrap .profileIMG .profileText h3 {
-  font-size: 1.8vw;
+  font-size: 45px;
   padding: 0 0 5px;
-}
-
-#thirdSection #profileWrap .profileIMG .profileText p {
-  font-size: 0.8vw;
 }
 
 #thirdSection #profileWrap .profileIMG:nth-child(12) .profileText {
@@ -840,6 +831,16 @@ section {
   overflow: hidden;
 }
 
+#fourthSection #fourth3dWrap {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 300px;
+          perspective: 300px;
+  width: 100vw;
+  height: 100vh;
+}
+
 #fourthSection #fourthPgBg {
   width: 100%;
   -webkit-transform-style: preserve-3d;
@@ -855,7 +856,7 @@ section {
   width: 50vw;
   position: absolute;
   top: 31vh;
-  left: 20vw;
+  left: 25vw;
 }
 
 #fourthSection > span {
@@ -878,7 +879,7 @@ section {
   width: 80vw;
   height: 23vh;
   position: absolute;
-  left: 3vw;
+  left: 15vw;
   top: 75vh;
 }
 
@@ -912,6 +913,7 @@ section {
 
 #fourthSection ul li {
   width: 24%;
+  position: relative;
   -webkit-filter: saturate(0.2);
           filter: saturate(0.2);
   -webkit-transition: .3s;
@@ -938,397 +940,5 @@ section {
   overflow: hidden !important;
   -ms-touch-action: none;
       touch-action: none;
-}
-
-@media all and (min-width: 1280px) and (max-width: 1599px) {
-  #firstSection #firstLogo {
-    width: 50vw;
-    left: 30vw;
-  }
-  #firstSection #NextfirstLogo {
-    width: 45%;
-  }
-  #firstSection ul {
-    left: 4vw;
-  }
-  #secondSection #secondLogo {
-    top: 23vh;
-  }
-  #thirdSection #profileWrap {
-    width: 1000vw;
-  }
-  #thirdSection #profileWrap .profileIMG {
-    width: 18vw;
-  }
-  #thirdSection #profileWrap .profileIMG:hover {
-    width: 25vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText p {
-    font-size: 1vw;
-  }
-  #fourthSection #fourthPgLogo {
-    top: 38vh;
-  }
-}
-
-@media all and (min-width: 1024px) and (max-width: 1279px) {
-  #firstSection #firstLogo {
-    width: 50vw;
-    left: 30vw;
-  }
-  #firstSection #NextfirstLogo {
-    width: 45%;
-  }
-  #firstSection ul {
-    left: 4vw;
-    top: 53vh;
-  }
-  #secondSection #secondLogo {
-    top: 25vh;
-  }
-  #menu ul {
-    font-size: 1.5vw;
-  }
-  #lang {
-    font-size: 2vw;
-  }
-  #thirdSection #profileWrap {
-    width: 1000vw;
-  }
-  #thirdSection #profileWrap .profileIMG {
-    width: 25vw;
-    height: 40vh;
-  }
-  #thirdSection #profileWrap .profileIMG:hover {
-    width: 30vw;
-    height: 55vh;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText {
-    top: 2vh;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText h3 {
-    font-size: 2.3vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText p {
-    font-size: 1.3vw;
-  }
-  #fourthSection #fourthPgLogo {
-    top: 50vh;
-  }
-}
-
-@media all and (min-width: 780px) and (max-width: 1023px) {
-  #firstSection #firstLogo {
-    width: 55vw;
-    left: 30vw;
-  }
-  #firstSection #NextfirstLogo {
-    width: 48%;
-  }
-  #firstSection ul {
-    left: 4vw;
-    top: 53vh;
-  }
-  #secondSection #epiMenu #episode #episodeBOX {
-    font-size: 2vw;
-  }
-  #secondSection #epiMenu #episode li:hover {
-    font-size: 2.5vw;
-  }
-  #secondSection #secondLogo {
-    top: 25.5vh;
-    left: 5vw;
-    width: 55vw;
-  }
-  #secondSection #freevwIMG {
-    width: 50vw;
-    height: 30vh;
-    left: 5vw;
-    top: 40vh;
-  }
-  #secondSection #freevwText {
-    top: 62vh;
-    left: 14.5vw;
-    width: 45%;
-    font-size: 1.6vw;
-  }
-  #menu ul {
-    font-size: 1.5vw;
-  }
-  #lang {
-    font-size: 2vw;
-  }
-  #thirdSection #thirdLogo {
-    width: 70vw;
-  }
-  #thirdSection #profileWrap {
-    width: 1000vw;
-    top: 30vh;
-  }
-  #thirdSection #profileWrap .profileIMG {
-    width: 35vw;
-  }
-  #thirdSection #profileWrap .profileIMG:hover {
-    width: 43vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText {
-    width: 35vw;
-    top: 3vh;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText h3 {
-    font-size: 2.5vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText p {
-    font-size: 1.8vw;
-  }
-  #fourthSection #fourthPgLogo {
-    top: 40vh;
-  }
-  #fourthSection ul {
-    top: 58vh;
-  }
-}
-
-@media all and (min-width: 640px) and (max-width: 779px) {
-  #firstSection #firstLogo {
-    width: 60vw;
-    left: 30vw;
-    top: 43vw;
-  }
-  #firstSection #NextfirstLogo {
-    width: 80vw;
-    left: 42vw;
-    top: 19vh;
-  }
-  #firstSection ul {
-    left: 5vw;
-    top: 78vh;
-  }
-  #secondSection #epiMenu #episode #episodeBOX {
-    font-size: 2.5vw;
-  }
-  #secondSection #epiMenu #episode li:hover {
-    font-size: 3vw;
-  }
-  #secondSection #secondLogo {
-    top: 25.5vh;
-    left: 5vw;
-    width: 55vw;
-  }
-  #secondSection #freevwIMG {
-    width: 50vw;
-    height: 30vh;
-    left: 5vw;
-    top: 40vh;
-  }
-  #secondSection #freevwText {
-    top: 62vh;
-    left: 14.5vw;
-    width: 45%;
-    font-size: 1.6vw;
-  }
-  #menu ul {
-    font-size: 1.5vw;
-  }
-  #lang {
-    font-size: 4vw;
-  }
-  #thirdSection #thirdLogo {
-    width: 70vw;
-  }
-  #thirdSection #profileWrap {
-    width: 1000vw;
-    top: 30vh;
-  }
-  #thirdSection #profileWrap .profileIMG {
-    width: 35vw;
-  }
-  #thirdSection #profileWrap .profileIMG:hover {
-    width: 46vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText {
-    width: 38vw;
-    top: -0vh;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText h3 {
-    font-size: 2.5vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText p {
-    font-size: 1.8vw;
-  }
-  #fourthSection #fourthPgLogo {
-    top: 40vh;
-  }
-  #fourthSection ul {
-    top: 58vh;
-  }
-}
-
-@media all and (min-width: 480px) and (max-width: 639px) {
-  #firstSection {
-    background-position-x: -140vw;
-  }
-  #firstSection #maskBox {
-    background-position-x: -140vw;
-  }
-  #firstSection #firstLogo {
-    width: 90vw;
-    left: 50vw;
-    top: 40vw;
-  }
-  #firstSection #scrollBar {
-    left: 50vw;
-  }
-  #firstSection #NextfirstLogo {
-    width: 80vw;
-    left: 42vw;
-    top: 19vh;
-  }
-  #firstSection ul {
-    left: 5vw;
-    top: 78vh;
-  }
-  #secondSection #epiMenu #episode #episodeBOX {
-    font-size: 2.5vw;
-  }
-  #secondSection #epiMenu #episode li:hover {
-    font-size: 3vw;
-  }
-  #secondSection #secondLogo {
-    top: 25.5vh;
-    left: 5vw;
-    width: 55vw;
-  }
-  #secondSection #freevwIMG {
-    width: 50vw;
-    height: 30vh;
-    left: 5vw;
-    top: 40vh;
-  }
-  #secondSection #freevwText {
-    top: 62vh;
-    left: 14.5vw;
-    width: 45%;
-    font-size: 1.6vw;
-  }
-  #menu ul {
-    font-size: 1.5vw;
-  }
-  #lang {
-    font-size: 4vw;
-  }
-  #thirdSection #thirdLogo {
-    width: 70vw;
-  }
-  #thirdSection #profileWrap {
-    width: 1000vw;
-    top: 30vh;
-  }
-  #thirdSection #profileWrap .profileIMG {
-    width: 35vw;
-  }
-  #thirdSection #profileWrap .profileIMG:hover {
-    width: 46vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText {
-    width: 38vw;
-    top: -0vh;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText h3 {
-    font-size: 2.5vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText p {
-    font-size: 1.8vw;
-  }
-  #fourthSection #fourthPgLogo {
-    top: 40vh;
-  }
-  #fourthSection ul {
-    top: 58vh;
-  }
-}
-
-@media all and (max-width: 479px) {
-  #firstSection {
-    background-position-x: -140vw;
-  }
-  #firstSection #maskBox {
-    background-position-x: -140vw;
-  }
-  #firstSection #firstLogo {
-    width: 90vw;
-    left: 50vw;
-    top: 40vw;
-  }
-  #firstSection #scrollBar {
-    left: 50vw;
-  }
-  #firstSection #NextfirstLogo {
-    width: 80vw;
-    left: 42vw;
-    top: 19vh;
-  }
-  #firstSection ul {
-    left: 5vw;
-    top: 78vh;
-  }
-  #secondSection #epiMenu #episode #episodeBOX {
-    font-size: 2.5vw;
-  }
-  #secondSection #epiMenu #episode li:hover {
-    font-size: 3vw;
-  }
-  #secondSection #secondLogo {
-    top: 25.5vh;
-    left: 5vw;
-    width: 55vw;
-  }
-  #secondSection #freevwIMG {
-    width: 50vw;
-    height: 30vh;
-    left: 5vw;
-    top: 40vh;
-  }
-  #secondSection #freevwText {
-    top: 62vh;
-    left: 14.5vw;
-    width: 45%;
-    font-size: 1.6vw;
-  }
-  #menu ul {
-    font-size: 1.5vw;
-  }
-  #lang {
-    font-size: 4vw;
-  }
-  #thirdSection #thirdLogo {
-    width: 70vw;
-  }
-  #thirdSection #profileWrap {
-    width: 1000vw;
-    top: 30vh;
-  }
-  #thirdSection #profileWrap .profileIMG {
-    width: 35vw;
-  }
-  #thirdSection #profileWrap .profileIMG:hover {
-    width: 46vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText {
-    width: 38vw;
-    top: -0vh;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText h3 {
-    font-size: 2.5vw;
-  }
-  #thirdSection #profileWrap .profileIMG .profileText p {
-    font-size: 1.8vw;
-  }
-  #fourthSection #fourthPgLogo {
-    top: 40vh;
-  }
-  #fourthSection ul {
-    top: 58vh;
-  }
 }
 /*# sourceMappingURL=style.css.map */
