@@ -1,4 +1,4 @@
-
+window.onload=function() {
     const mask = document.querySelector('#maskBox'),
     scrollB = document.querySelector('#scrollBar'),
     indis = document.querySelector('#indi'),
@@ -12,7 +12,9 @@
     indiclick = document.queryCommandValue('#indiclick'),
     menus = document.querySelectorAll('.menus'),
     section = document.querySelectorAll('section'),
+    epiLiBox = document.querySelector('#episodeBOX')
     epiLi = document.querySelector('#episodeSlide'),
+    epiSlide = epiLi.querySelectorAll('li'),
     epiList = epiLi.querySelectorAll('li'),
     profileWrap = document.querySelector('#profileWrap'),
     profileIMG = document.querySelectorAll('.profileIMG'),
@@ -20,10 +22,9 @@
     trailerVD = document.querySelectorAll('.tVD'),
     profileScroll = document.querySelector('#profileScroll'),
     lang = document.querySelectorAll('#lang li'),
-    videoBT = document.querySelector('#videoBT');
-    console.log(videoBT)
+    videoBT = document.querySelector('#videoBT')
 
-    console.log(lang)
+    console.log(epiLiBox)
 
     console.log(netflixLogo)
 
@@ -38,7 +39,10 @@
         scrollB.style.opacity = "0"
         firstLogo.style.opacity = "0"
         cursorItemCircle.style.backgroundColor =  "white";
-        cursorItemCircle.style.transform = "scale(.5)"
+        cursorItemCircle.style.transform = "scale(.5)";
+        setInterval(()=> {
+            firstLogo.style.display = 'none'
+        },500)
         
         function moveM (pageX, pageY) {
             mask.style.left = pageX - mask.offsetWidth/0 + 'px';
@@ -139,17 +143,25 @@ li[3].addEventListener('click', () => {
     menus[0].style.color=offColor;
 })
 ///////////////////2P 슬라이드////////////////////////////////
-const seasonBox = document.querySelector('#seasonBOX'),
-      seasonSlide = document.querySelector('#seasonSlide'),
-      season = document.querySelectorAll('.season');
-console.log(season)
+function transformTop(t) {
+    if(transformT >= 1) {
+        transformT=1;
+    } else if (transformT<= -69) {
+        transformT=-69;
+    }
+    transformT -= ((t.deltaY * 0.01)*10);
+    console.log(transformT)
+    epiLi.style.top = `${transformT}vh`
 
-seasonBox.addEventListener('scroll',function() {
-    console.log(this.scrollTop)
-})
+}
+let transformT=1;
 
 
-if(window.location =="http://127.0.0.1:5500/%EC%A2%85%EC%9D%B4%EC%9D%98%EC%A7%91/JPindex.html") {
+epiLiBox.onwheel = transformTop;
+
+
+
+if(window.location.href =="http://127.0.0.1:5501/%EC%A2%85%EC%9D%B4%EC%9D%98%EC%A7%91/JPindex.html") {
     loadEpi ()
     .then (ep => {
         console.log(ep)
@@ -193,8 +205,8 @@ if(window.location =="http://127.0.0.1:5500/%EC%A2%85%EC%9D%B4%EC%9D%98%EC%A7%91
         const filtered = ep.filter(epBox => epBox[key] == value);
         displayEpi(filtered)
     }
-
-} else if (window.location !="http://127.0.0.1:5500/%EC%A2%85%EC%9D%B4%EC%9D%98%EC%A7%91/JPindex.html"){
+    
+} else {
 /////////////////////////////////데이터데이터데이터ㅡㅡ//
 epiLi.addEventListener('click',function () {
     loadEpi ()
@@ -248,7 +260,7 @@ epiLi.addEventListener('click',function () {
     }
     })
 }
-
+//우와 드디어 해냈다 !!! ^^^^^^^^^따라쳐본거지만,...^^//////////////
     for(let i=0; i<epiList.length; i++) {
         epiList[i].addEventListener('click',function(event) {
             epiList.forEach((item) => {
@@ -286,7 +298,7 @@ let x = 0,
     y = 0,
     mouseX = 0,
     mouseY = 0,
-    speed = 0.009;
+    speed = 0.1;
 
     const fourthPgBg = document.querySelector('#fourthPgBg')
     console.log(fourthPgBg);
@@ -303,7 +315,7 @@ let x = 0,
         mouseX += (x - mouseX) * speed;
         mouseY += (y- mouseY) * speed;
     
-        fourthPgBg.style.transform = "translate3d("+ -(mouseX/10) +"px," + -(mouseY/1000) +"px,0) rotate3d(0,1,0,"+ -mouseX / 500 +"deg)";
+        fourthPgBg.style.transform = "translate3d("+ -(mouseX/20) +"px," + -(mouseY/1000) +"px,0) rotate3d(0,1,0,"+ -mouseX / 1000 +"deg)";
         
         window.requestAnimationFrame(move3d)
     }
@@ -316,6 +328,7 @@ let x = 0,
     window.addEventListener("mousemove",function(e){
         x = e.pageX;
         y = e.pageY;
+        console.log(e.pageX , e.pageY)
     })
     cursors()
     function cursors() {
@@ -361,6 +374,20 @@ let x = 0,
         })
     }
 
+    for(let i=0; i<li.length; i++) {
+        li[i].addEventListener('mousemove',function(event) {
+            li.forEach((item) => {
+                li[i].addEventListener('mousemove',function(e) {
+                    cursorItemCircle.style.backgroundColor =  "white";
+                    cursorItemCircle.style.transform = "scale(.5)"
+                })
+                li[i].addEventListener('mouseout',function(e) {
+                    cursorItemCircle.style.backgroundColor =  "#B43131";
+                    cursorItemCircle.style.transform = "scale(1)"
+                })
+            })
+        })
+    }
 
     for(let i=0; i<profileIMG.length; i++) {
         profileIMG[i].addEventListener('mousemove',function(event) {
@@ -406,7 +433,7 @@ let x = 0,
              })
          })
      }
-
+}
 
 //
 
