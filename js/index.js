@@ -25,6 +25,16 @@ window.onload=function() {
     videoBT = document.querySelector('#videoBT')
 
 
+    function whenHover() {
+        cursorItemCircle.style.backgroundColor =  "white";
+        cursorItemCircle.style.transform = "scale(.5)";
+    }
+
+    function whenNormal() {
+        cursorItemCircle.style.backgroundColor =  "#B43131";
+        cursorItemCircle.style.transform = "scale(1)"
+    }
+    
     netflixLogo.addEventListener('click',function() {
         section[0].scrollIntoView({behavior:'smooth'});
     })
@@ -35,14 +45,14 @@ window.onload=function() {
         mask.style.position = "absolute"
         scrollB.style.opacity = "0"
         firstLogo.style.opacity = "0"
-        cursorItemCircle.style.backgroundColor =  "white";
-        cursorItemCircle.style.transform = "scale(.5)";
+        whenHover();
         setInterval(()=> {
             firstLogo.style.display = 'none'
         },500)
         
         function moveM (pageX, pageY) {
-            mask.style.left = pageX - mask.offsetWidth/0 + 'px';
+            mask.style.left = pageX - mask.offsetWidth/ + 'px';
+            console.log(pageX)
             mask.style.top = pageY - mask.offsetHeight/3 + 'px';
 
             // console.log(pageY - mask.offsetHeight)
@@ -65,20 +75,11 @@ window.onload=function() {
 
         mask.onmouseup = function() {
             document.removeEventListener('mousemove', onMouseMove);
-            mask.onmouseup = null;
-            cursorItemCircle.style.backgroundColor =  "#B43131";
-            cursorItemCircle.style.transform = "scale(1)"
+            // mask.onmouseup = null;
+            whenNormal()
           };
     }
 
-mask.ondragstart = function() {
-    return false;
-    }
-
-
-if (mask.style.top === "200%") {
-    console.log('zz')
-}
 
 // Javascript
 ///슬라이드 고정///
@@ -87,9 +88,9 @@ scrollDisable()
 function scrollDisable(){
     htmls.classList.add('hidden')
 }
-function scrollAble(){
-    htmls.classList.remove('hidden')
-}
+// function scrollAble(){
+//     htmls.classList.remove('hidden')
+// }
 //////////////
 var nowHere = [0,1,2,3];
 now = 0;
@@ -138,6 +139,8 @@ for(let i=0; i<=3; i++) {
                 }
             }
         })
+        menus[i].addEventListener('mouseenter',whenHover);
+        menus[i].addEventListener('mouseleave',whenNormal);
         li[i].addEventListener('click',()=>{
             li[i].style.background = onColor;
             menus[i].style.color = onColor;
@@ -182,19 +185,16 @@ for(let i=0; i<=3; i++) {
         })
     })
 }
-for (let i=0; i<=3; i++) {
-
-}
 
 
 ///////////////////2P 슬라이드////////////////////////////////
-function transformTop(t) {
+function transformTop(pos) {
     if(transformT >= 1) {
         transformT=1;
     } else if (transformT<= -69) {
         transformT=-69;
     }
-    transformT -= ((t.deltaY * 0.01)*10);
+    transformT -= ((pos.deltaY * 0.01)*10);
     console.log(transformT)
     epiLi.style.top = `${transformT}vh`
 
@@ -209,7 +209,7 @@ epiLiBox.onwheel = transformTop;
 if(window.location.href =="http://127.0.0.1:5501/moneyHS_jiyu-main/JP_index.html") {
     loadEpi ()
     .then (ep => {
-        console.log(ep)
+        // console.log(ep)
         setClick(ep)
     })
 
@@ -252,7 +252,6 @@ if(window.location.href =="http://127.0.0.1:5501/moneyHS_jiyu-main/JP_index.html
     }
     
 } else {
-/////////////////////////////////데이터데이터데이터ㅡㅡ//
 epiLi.addEventListener('click',function () {
     loadEpi ()
     .then (ep => {
@@ -265,11 +264,6 @@ epiLi.addEventListener('click',function () {
         return fetch('data/data.json')
         .then(res => res.json())
         .then(jsons => jsons.ep);
-
-        // if (window.location.href="../JPindex.html"){
-        // return fetch('data/dataJP.json')
-        // .then(res => res.json())
-        // .then(jsons => jsons.ep)
         // }
     }
 
@@ -307,7 +301,7 @@ epiLi.addEventListener('click',function () {
     })
 }
 //우와 드디어 해냈다 !!! ^^^^^^^^^따라쳐본거지만,...^^//////////////
-    for(let i=0; i<epiList.length; i++) {
+     for(let i=0; i<epiList.length;i++) {
         epiList[i].addEventListener('click',function(event) {
             epiList.forEach((item) => {
                 item.classList.contains('on') ? item.classList.remove('on') : epiList[i].classList.add('on')
@@ -315,14 +309,8 @@ epiLi.addEventListener('click',function () {
         })
         epiList[i].addEventListener('mousemove',function(event) {
             epiList.forEach((item) => {
-                epiList[i].addEventListener('mousemove',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "white";
-                    cursorItemCircle.style.transform = "scale(.5)"
-                })
-                epiList[i].addEventListener('mouseout',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "#B43131";
-                    cursorItemCircle.style.transform = "scale(1)"
-                })
+                epiList[i].addEventListener('mousemove',whenHover)
+                epiList[i].addEventListener('mouseout',whenNormal)
             })
         })
     }
@@ -330,12 +318,12 @@ epiLi.addEventListener('click',function () {
 
 ///////////////3pg 휠이벤트////////////
     function wheelEvent(event) {
-        scale += event.deltaY * 0.01;
-        console.log(scale)
-        profileWrap.style.left=`-${scale*5}vw`;
+        slideMove += event.deltaY * 0.01;
+        // console.log(slideMove)
+        profileWrap.style.left=`-${slideMove*5}vw`;
         profileScroll.style.opacity = '0'
     }
-    let scale=1;
+    let slideMove=1;
 
     profileWrap.onwheel = wheelEvent;
 
@@ -385,22 +373,15 @@ let x = 0,
         cursorItem.style.transform =  "translate("+ mx +"px, "+ my + "px )";
     }
 
-    roundBt.addEventListener('mousemove',function(e) {
-        cursorItemCircle.style.backgroundColor =  "white";
-        cursorItemCircle.style.transform = "scale(.5)"
-    })
+    //mouseEvent;
+    roundBt.addEventListener('mousemove',whenHover)
     roundBt.addEventListener('mouseout',function(e) {
-        cursorItemCircle.style.backgroundColor =  "#B43131";
-        cursorItemCircle.style.transform = "scale(1)"
+        whenNormal()
     })
 
-    videoBT.addEventListener('mousemove',function(e) {
-        cursorItemCircle.style.backgroundColor =  "white";
-        cursorItemCircle.style.transform = "scale(.5)"
-    })
+    videoBT.addEventListener('mousemove',whenHover)
     videoBT.addEventListener('mouseout',function(e) {
-        cursorItemCircle.style.backgroundColor =  "#B43131";
-        cursorItemCircle.style.transform = "scale(1)"
+        whenNormal()
     })
     
 
@@ -408,29 +389,8 @@ let x = 0,
     for(let i=0; i<li.length; i++) {
         li[i].addEventListener('mousemove',function(event) {
             li.forEach((item) => {
-                li[i].addEventListener('mousemove',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "white";
-                    cursorItemCircle.style.transform = "scale(.5)"
-                })
-                li[i].addEventListener('mouseout',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "#B43131";
-                    cursorItemCircle.style.transform = "scale(1)"
-                })
-            })
-        })
-    }
-
-    for(let i=0; i<li.length; i++) {
-        li[i].addEventListener('mousemove',function(event) {
-            li.forEach((item) => {
-                li[i].addEventListener('mousemove',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "white";
-                    cursorItemCircle.style.transform = "scale(.5)"
-                })
-                li[i].addEventListener('mouseout',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "#B43131";
-                    cursorItemCircle.style.transform = "scale(1)"
-                })
+                li[i].addEventListener('mousemove',whenHover)
+                li[i].addEventListener('mouseout',whenNormal)
             })
         })
     }
@@ -438,14 +398,8 @@ let x = 0,
     for(let i=0; i<profileIMG.length; i++) {
         profileIMG[i].addEventListener('mousemove',function(event) {
             profileIMG.forEach((item) => {
-                profileIMG[i].addEventListener('mousemove',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "white";
-                    cursorItemCircle.style.transform = "scale(.5)"
-                })
-                profileIMG[i].addEventListener('mouseout',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "#B43131";
-                    cursorItemCircle.style.transform = "scale(1)"
-                })
+                profileIMG[i].addEventListener('mousemove',whenHover)
+                profileIMG[i].addEventListener('mouseout',whenNormal)
             })
         })
     }
@@ -453,14 +407,8 @@ let x = 0,
     for(let i=0; i<trailerVD.length; i++) {
        trailerVD[i].addEventListener('mousemove',function(event) {
             trailerVD.forEach((item) => {
-                trailerVD[i].addEventListener('mousemove',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "white";
-                    cursorItemCircle.style.transform = "scale(.5)"
-                })
-                trailerVD[i].addEventListener('mouseout',function(e) {
-                    cursorItemCircle.style.backgroundColor =  "#B43131";
-                    cursorItemCircle.style.transform = "scale(1)"
-                })
+                trailerVD[i].addEventListener('mousemove',whenHover)
+                trailerVD[i].addEventListener('mouseout',whenNormal)
             })
         })
     }
@@ -468,14 +416,8 @@ let x = 0,
     for(let i=0; i<lang.length; i++) {
         lang[i].addEventListener('mousemove',function(event) {
              lang.forEach((item) => {
-                 lang[i].addEventListener('mousemove',function(e) {
-                     cursorItemCircle.style.backgroundColor =  "white";
-                     cursorItemCircle.style.transform = "scale(.5)"
-                 })
-                 lang[i].addEventListener('mouseout',function(e) {
-                     cursorItemCircle.style.backgroundColor =  "#B43131";
-                     cursorItemCircle.style.transform = "scale(1)"
-                 })
+                 lang[i].addEventListener('mousemove',whenHover)
+                 lang[i].addEventListener('mouseout',whenNormal)
              })
          })
      }
