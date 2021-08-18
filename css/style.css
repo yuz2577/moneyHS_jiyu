@@ -175,10 +175,6 @@ body {
   border-radius: 100%;
 }
 
-#indi ul li:nth-child(1) {
-  background: white;
-}
-
 #indi.on {
   background: white;
 }

@@ -24,9 +24,6 @@ window.onload=function() {
     lang = document.querySelectorAll('#lang li'),
     videoBT = document.querySelector('#videoBT')
 
-    console.log(epiLiBox)
-
-    console.log(netflixLogo)
 
     netflixLogo.addEventListener('click',function() {
         section[0].scrollIntoView({behavior:'smooth'});
@@ -48,7 +45,7 @@ window.onload=function() {
             mask.style.left = pageX - mask.offsetWidth/0 + 'px';
             mask.style.top = pageY - mask.offsetHeight/3 + 'px';
 
-            console.log(pageY - mask.offsetHeight)
+            // console.log(pageY - mask.offsetHeight)
             if(pageY - mask.offsetHeight >= -300) {
                 mask.style.top ="300%";
                 mask.style.opacity = "0";
@@ -93,55 +90,103 @@ function scrollDisable(){
 function scrollAble(){
     htmls.classList.remove('hidden')
 }
-////////////////
-li[0].addEventListener('click', (self) => {
-    section[0].scrollIntoView({behavior:'smooth'});
-    li[0].style.background=onColor;
-    li[1].style.background=offColor;
-    li[2].style.background=offColor;
-    li[3].style.background=offColor;
+//////////////
+var nowHere = [0,1,2,3];
+now = 0;
+li[0].style.background = onColor;
+menus[0].style.color = onColor;
+for(let i=0; i<=3; i++) {
+    nowHere.forEach((item)=>{
+        menus[i].addEventListener('click',()=>{
+            now = i;
+            li[i].style.background = onColor;
+            menus[i].style.color = onColor;
+            section[i].scrollIntoView({behavior:'smooth'});
+            if(now == i) {
+                li[i].style.background = onColor;
+                menus[i].style.color = onColor;
+                if (now==0) {
+                    li[i+1].style.background = offColor;
+                    li[i+2].style.background = offColor;
+                    li[i+3].style.background = offColor;
+                    menus[i+1].style.color = offColor;
+                    menus[i+2].style.color = offColor;
+                    menus[i+3].style.color = offColor;
+                }
+                if (now>=1) {
+                    li[i-1].style.background = offColor;
+                    menus[i-1].style.color = offColor;
+                    if (now==1) {
+                        li[i+1].style.background = offColor;
+                        li[i+2].style.background = offColor;
+                        menus[i+1].style.color = offColor;
+                        menus[i+2].style.color = offColor;
+                    }
+                    if (now>=2) {
+                        li[i-2].style.background = offColor;
+                        menus[i-2].style.color = offColor;
+                        if (now==2) {
+                            li[i+1].style.background = offColor;
+                            menus[i+1].style.color = offColor;
+                        }
+                    }
+                    if (now >= 3) {
+                        li[i-3].style.background = offColor;
+                        menus[i-3].style.color = offColor;
+                        console.log(now)
+                    }
+                }
+            }
+        })
+        li[i].addEventListener('click',()=>{
+            li[i].style.background = onColor;
+            menus[i].style.color = onColor;
+            section[i].scrollIntoView({behavior:'smooth'});
+            now = i;
+            if(now == i) {
+                li[i].style.background = onColor;
+                menus[i].style.color = onColor;
+                if (now==0) {
+                    li[i+1].style.background = offColor;
+                    li[i+2].style.background = offColor;
+                    li[i+3].style.background = offColor;
+                    menus[i+1].style.color = offColor;
+                    menus[i+2].style.color = offColor;
+                    menus[i+3].style.color = offColor;
+                }
+                if (now>=1) {
+                    li[i-1].style.background = offColor;
+                    menus[i-1].style.color = offColor;
+                    if (now==1) {
+                        li[i+1].style.background = offColor;
+                        li[i+2].style.background = offColor;
+                        menus[i+1].style.color = offColor;
+                        menus[i+2].style.color = offColor;
+                    }
+                    if (now>=2) {
+                        li[i-2].style.background = offColor;
+                        menus[i-2].style.color = offColor;
+                        if (now==2) {
+                            li[i+1].style.background = offColor;
+                            menus[i+1].style.color = offColor;
+                        }
+                    }
+                    if (now >= 3) {
+                        li[i-3].style.background = offColor;
+                        menus[i-3].style.color = offColor;
+                        console.log(now)
+                    }
+                }
+            }
 
-    menus[0].style.color = onColor;
-    menus[1].style.color=offColor;
-    menus[2].style.color=offColor;
-    menus[3].style.color=offColor;
-})
-li[1].addEventListener('click', () => {
-    section[1].scrollIntoView({behavior:'smooth'})
-    li[1].style.background=onColor;
-    li[0].style.background=offColor;
-    li[2].style.background=offColor;
-    li[3].style.background=offColor;
+        })
+    })
+}
+for (let i=0; i<=3; i++) {
 
-    menus[1].style.color = onColor;
-    menus[0].style.color=offColor;
-    menus[3].style.color=offColor;
-    menus[2].style.color=offColor;
-})
-li[2].addEventListener('click', () => {
-    section[2].scrollIntoView({behavior:'smooth'})
-    li[2].style.background=onColor;
-    li[1].style.background=offColor;
-    li[3].style.background=offColor;
-    li[0].style.background=offColor;
+}
 
-    menus[2].style.color = onColor;
-    menus[1].style.color=offColor;
-    menus[0].style.color=offColor;
-    menus[3].style.color=offColor;
-})
-li[3].addEventListener('click', () => {
-    section[3].scrollIntoView({behavior:'smooth'})
-    li[3].style.background=onColor;
-    li[1].style.background=offColor;
-    li[2].style.background=offColor;
-    li[0].style.background=offColor;
 
-    menus[3].style.color = onColor;
-    menus[1].style.color=offColor;
-    menus[2].style.color=offColor;
-    menus[0].style.color=offColor;
-})
 ///////////////////2P 슬라이드////////////////////////////////
 function transformTop(t) {
     if(transformT >= 1) {
@@ -161,7 +206,7 @@ epiLiBox.onwheel = transformTop;
 
 
 
-if(window.location.href =="http://127.0.0.1:5501/%EC%A2%85%EC%9D%B4%EC%9D%98%EC%A7%91/JPindex.html") {
+if(window.location.href =="http://127.0.0.1:5501/moneyHS_jiyu-main/JP_index.html") {
     loadEpi ()
     .then (ep => {
         console.log(ep)
@@ -215,10 +260,11 @@ epiLi.addEventListener('click',function () {
         setClick(ep)
     })
 
+
     function loadEpi () {
         return fetch('data/data.json')
         .then(res => res.json())
-        .then(jsons => jsons.ep)
+        .then(jsons => jsons.ep);
 
         // if (window.location.href="../JPindex.html"){
         // return fetch('data/dataJP.json')
@@ -328,7 +374,7 @@ let x = 0,
     window.addEventListener("mousemove",function(e){
         x = e.pageX;
         y = e.pageY;
-        console.log(e.pageX , e.pageY)
+        // console.log(e.pageX , e.pageY)
     })
     cursors()
     function cursors() {
